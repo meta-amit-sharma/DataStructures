@@ -1,4 +1,4 @@
-package com.datastructures.assignment2;
+package main.java.util;
 import java.util.Arrays;
 /**
  * This class is to implement basic queue operations.
@@ -7,24 +7,34 @@ import java.util.Arrays;
 public class Queue<T> {
 	private T[] queueArray;
 	
+	/**
+	 * Constructor to initiate the array
+	 */
 	@SuppressWarnings("unchecked")
-	Queue () {								/*Constructor to initiate the array*/
+	public Queue () {								
 		queueArray = (T[]) new Object[0];
 	}
 	
-	public T getQueueElement(int index) {	/*To get the element from the queue*/
-		return queueArray[index];
-	}
-	
-	public T[] getQueueArray() {			/*To get the queue*/
+	/**
+	 * To get the queue
+	 * @return queue
+	 */
+	public T[] getQueueArray() {
 		return queueArray;
 	}
 
-	public int length() {					/*To get the length of queue*/
+	/**
+	 * To get the length of queue
+	 * @return length of queue
+	 */
+	public int length() {
 		return queueArray.length;
 	}
 	
-	/*This function inserts element into the queue*/
+	/**
+	 * This function inserts element into the queue
+	 * @param item to add
+	 */
 	public void enQueue(T item) {
 		T[] tempArray = (T[]) new Object[queueArray.length + 1];
 		tempArray = Arrays.copyOf(queueArray,queueArray.length +1);
@@ -32,7 +42,10 @@ public class Queue<T> {
 		queueArray = tempArray;
 	}
 	
-	/*This function deletes element from the queue*/
+	/**
+	 * This function deletes element from the queue
+	 * @return deleted element
+	 */
 	public T deQueue () {
 		if(queueArray.length <= 0) {
 			return null;
@@ -44,12 +57,17 @@ public class Queue<T> {
 		return deletedElement;
 	}
 	
-	/*This function empties the queue*/
+	/**
+	 * This function empties the queue
+	 */
 	public void makeempty() {
 		queueArray = (T[]) new Object[0];
 	}
 	
-	/*This function returns the least recently inserted item*/
+	/**
+	 * This function returns the least recently inserted item
+	 * @return the front element
+	 */
 	public T getFront () {
 		if(queueArray.length <= 0) {
 			return null;

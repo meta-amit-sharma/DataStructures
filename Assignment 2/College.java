@@ -1,4 +1,4 @@
-package com.datastructures.assignment2;
+package main.java.util;
 /**
  * This class represents college.
  * @author Amit Sharma
@@ -7,35 +7,56 @@ package com.datastructures.assignment2;
 public class College {
 	private int id;
 	private String name;
-	private int avlSeats;
+	private int availableSeats;
 	
-	College(int id,String name, int seats) {
+	/**
+	 * constructor
+	 * @param id - id of college
+	 * @param name - name of college
+	 * @param seats - available seats in college
+	 */
+	public College(int id,String name, int seats) {
 		this.id = id;
 		this.name = name;
-		this.avlSeats = seats;
+		this.availableSeats = seats;
 	}
 
+	/**
+	 * getter for getting the id of college
+	 * @return
+	 */
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	/**
+	 * getter for getting the name of college
+	 * @return name of college
+	 */
 	public String getName() {
 		return name;
 	}
 
-	public int getAvlSeats() {
-		return avlSeats;
+	/**
+	 * getter for getting the available seats of college
+	 * @return available seats
+	 */
+	public int getAvailableSeats() {
+		return availableSeats;
 	}
 
-	public void updateAvlSeats() {
-		this.avlSeats--;
+	/**
+	 * method to update the available seat
+	 */
+	public void updateAvailableSeats() {
+		this.availableSeats--;
 	}
 	
-	public boolean isAvailable() {
-		return (this.avlSeats > 0) ? true : false;
+	/**
+	 * Check for available seat
+	 * @return true or false
+	 */
+	public boolean isSeatAvailable() {
+		return (this.availableSeats > 0) ? true : false;
 	}
 }
